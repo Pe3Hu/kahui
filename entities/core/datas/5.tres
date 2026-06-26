@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CoreData" format=3 uid="uid://dhdm5qsuwrjxx"]
+
+[ext_resource type="Script" uid="uid://3s47pknv6kdb" path="res://entities/core/data_core.gd" id="1_mjaas"]
+
+[resource]
+script = ExtResource("1_mjaas")
+metadata/_custom_type_script = "uid://3s47pknv6kdb"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CoreData" format=3 uid="uid://whivlojnau6k"]
+
+[ext_resource type="Script" uid="uid://3s47pknv6kdb" path="res://entities/core/data_core.gd" id="1_v26i3"]
+
+[resource]
+script = ExtResource("1_v26i3")
+a1 = Array[int]([12])
+a2 = Array[int]([8, 9, 10, 14, 15, 16, 20, 21, 22])
+b1 = Array[int]([32, 33])
+b2 = Array[int]([7, 13, 19])
+c1 = Array[int]([2, 3])
+c2 = Array[int]([18])
+d1 = Array[int]([17, 23])
+d2 = Array[int]([25, 26, 27, 28])
+acnhores = Array[int]([8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, 21, 22, 25, 26, 32])
+metadata/_custom_type_script = "uid://3s47pknv6kdb"

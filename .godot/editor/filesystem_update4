@@ -1,0 +1,12 @@
+res://entities/world/world.tscn
+res://entities/pool/dice/data_dice.gd
+res://entities/pool/data_pool.gd
+res://global/Bozo.gd
+res://entities/pool/dice/claw.tres
+res://entities/pool/dice/fang.tres
+res://entities/pool/dice/tail.tres
+res://global/Catalog.gd
+res://global/Digest.gd
+res://entities/world/data_world.gd
+res://entities/encounter/data_encounter.gd
+res://entities/world/world.gd

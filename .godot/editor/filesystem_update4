@@ -1,12 +1,9 @@
 res://entities/world/world.tscn
-res://entities/pool/dice/data_dice.gd
 res://entities/pool/data_pool.gd
+res://entities/hull/hull.tscn
+res://entities/hull/module/data_module.gd
 res://global/Bozo.gd
-res://entities/pool/dice/claw.tres
-res://entities/pool/dice/fang.tres
-res://entities/pool/dice/tail.tres
-res://global/Catalog.gd
 res://global/Digest.gd
-res://entities/world/data_world.gd
-res://entities/encounter/data_encounter.gd
-res://entities/world/world.gd
+res://entities/hull/hull_data.gd
+res://entities/world/world_data.gd
+res://entities/encounter/encounter_data.gd

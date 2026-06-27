@@ -9,3 +9,4 @@ var pool: PoolData = PoolData.new(self)
 
 func _init(world_: WorldData) -> void:
 	world = world_
+	

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="DiceData" format=3 uid="uid://btee8fhtxypmf"]
 
-[ext_resource type="Script" uid="uid://cdhl0ssicmg13" path="res://entities/pool/dice/data_dice.gd" id="1_857pg"]
+[ext_resource type="Script" uid="uid://cdhl0ssicmg13" path="res://entities/pool/dice/dice_data.gd" id="1_857pg"]
 
 [resource]
 script = ExtResource("1_857pg")

@@ -5,6 +5,10 @@ extends Node
 var data = WorldData.new()
 
 
+func _ready() -> void:
+	%Processor.data = data.processor
+	
+
 func _input(event) -> void:
 	if event is InputEventKey:
 		match event.keycode:

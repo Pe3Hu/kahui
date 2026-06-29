@@ -1,12 +1,7 @@
 extends Node
 
 
-enum Type {
-	NONE = 0,
-	CIRCUMSTANCE = -1,
-	DICE = -2,
-	MODULE = -3,
-}
+
 
 enum Circumstance {
 	NONE = 0,
@@ -28,17 +23,37 @@ enum Module {
 	LIMB = 8,
 }
 
+enum Tone {
+	NONE = 0,
+	RED = 9,
+	YELLOW = 10,
+	GREEN = 11,
+	BLUE = 12
+}
+
+
+#region string
+enum Type {
+	NONE = 0,
+	CIRCUMSTANCE = -1,
+	DICE = -2,
+	MODULE = -3,
+	TONE = -4,
+}
+
 const type_to_index = {
 	Type.NONE: 0,
 	Type.CIRCUMSTANCE: 1,
 	Type.DICE: 3,
 	Type.MODULE: 6,
+	Type.TONE: 9,
 }
 
 const type_to_enum = {
 	Type.CIRCUMSTANCE: Bozo.Circumstance,
 	Type.DICE: Bozo.Dice,
 	Type.MODULE: Bozo.Module,
+	Type.TONE: Bozo.Tone,
 }
 
 func enum_to_string(type_: Variant, value_: int) -> String:
@@ -50,3 +65,4 @@ func enum_to_string(type_: Variant, value_: int) -> String:
 		return key_name.to_lower()
 	
 	return "unknown"
+#endregion

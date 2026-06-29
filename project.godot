@@ -24,6 +24,7 @@ config/icon="res://assets/icon.svg"
 Catalog="*res://global/Catalog.gd"
 Bozo="*res://global/Bozo.gd"
 Digest="*uid://bp2e5r0aesguk"
+Helper="*uid://452clfwigx8i"
 
 [display]
 

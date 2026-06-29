@@ -2,7 +2,6 @@ class_name HullData
 extends Resource
 
 
-
 var world: WorldData
 
 

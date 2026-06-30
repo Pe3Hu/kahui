@@ -11,5 +11,4 @@ extends Resource
 @export var d1: Array[int]
 @export var d2: Array[int]
 
-
-@export var acnhores: Array[int]
+@export var anchors: Array[int]

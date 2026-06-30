@@ -1,8 +1,6 @@
 extends Node
 
 
-
-
 enum Circumstance {
 	NONE = 0,
 	DOMINANCE = 1,
@@ -31,6 +29,23 @@ enum Tone {
 	BLUE = 12
 }
 
+enum Windrose {
+	NONE = 0,
+	N = 13,
+	NE = 14,
+	E = 15,
+	SE = 16,
+	S = 17,
+	SW = 18,
+	W = 19,
+	NW = 20,
+}
+
+enum Trend {
+	NONE = 0,
+	GROWTH = 21,
+	DECAY = 22,
+}
 
 #region string
 enum Type {
@@ -39,6 +54,8 @@ enum Type {
 	DICE = -2,
 	MODULE = -3,
 	TONE = -4,
+	WINDROSE = -5,
+	TREND = -6,
 }
 
 const type_to_index = {
@@ -47,6 +64,8 @@ const type_to_index = {
 	Type.DICE: 3,
 	Type.MODULE: 6,
 	Type.TONE: 9,
+	Type.WINDROSE: 13,
+	Type.TREND: 20,
 }
 
 const type_to_enum = {
@@ -54,6 +73,8 @@ const type_to_enum = {
 	Type.DICE: Bozo.Dice,
 	Type.MODULE: Bozo.Module,
 	Type.TONE: Bozo.Tone,
+	Type.WINDROSE: Bozo.Windrose,
+	Type.TREND: Bozo.Trend,
 }
 
 func enum_to_string(type_: Variant, value_: int) -> String:

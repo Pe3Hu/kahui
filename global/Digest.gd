@@ -13,6 +13,7 @@ const module_to_string = {
 	Bozo.Module.LIMB: "limb",
 }
 
+#region tone
 const letter_to_tone = {
 	"a": Bozo.Tone.RED,
 	"b": Bozo.Tone.YELLOW,
@@ -32,4 +33,19 @@ const tone_to_terrain = {
 	Bozo.Tone.YELLOW: 1,
 	Bozo.Tone.GREEN: 2,
 	Bozo.Tone.BLUE: 3,
+}
+#endregion
+
+const windrose_to_direction = {
+	Bozo.Windrose.N : Vector2i(0, -1),
+	Bozo.Windrose.E : Vector2i(1, 0),
+	Bozo.Windrose.S : Vector2i(0, 1),
+	Bozo.Windrose.W : Vector2i(-1, 0),
+}
+
+const windrose_to_mirror = {
+	Bozo.Windrose.N : Bozo.Windrose.S,
+	Bozo.Windrose.E : Bozo.Windrose.W,
+	Bozo.Windrose.S : Bozo.Windrose.N,
+	Bozo.Windrose.W : Bozo.Windrose.E,
 }

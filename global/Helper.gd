@@ -42,3 +42,16 @@ func defect_index_to_coord(index_: int) -> Vector2i:
 	@warning_ignore("integer_division")
 	var y = index_ / Catalog.CORE_CHIP_SIZE.y - Catalog.CORE_CHIP_SIZE.y / 2
 	return Vector2i(x, y)
+
+func edge_sort(windrose_: Bozo.Windrose, a_: Vector2i, b_: Vector2i) -> bool:
+	match windrose_:
+		Bozo.Windrose.N:
+			return a_.x < b_.x
+		Bozo.Windrose.E:
+			return a_.y < b_.y
+		Bozo.Windrose.S:
+			return a_.x > b_.x
+		Bozo.Windrose.W:
+			return a_.y > b_.y
+	
+	return false

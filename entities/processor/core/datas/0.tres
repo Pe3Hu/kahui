@@ -12,5 +12,5 @@ c1 = Array[int]([18])
 c2 = Array[int]([2, 3, 8, 9, 14, 15, 20, 21])
 d1 = Array[int]([17, 23])
 d2 = Array[int]([25, 26, 27, 28])
-acnhores = Array[int]([12, 13, 18, 19, 20, 21, 22, 23, 25, 26, 32])
+anchors = Array[int]([12, 13, 18, 19, 20, 21, 22, 23, 25, 26, 32])
 metadata/_custom_type_script = "uid://3s47pknv6kdb"

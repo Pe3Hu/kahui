@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bawg2ecg1dbg5"]
+
+[ext_resource type="Script" uid="uid://dunkiju6g367s" path="res://entities/processor/circuit/circuit.gd" id="1_a1tl8"]
+
+[node name="Circuit" type="Line2D" unique_id=1449801198]
+script = ExtResource("1_a1tl8")

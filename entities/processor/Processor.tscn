@@ -1,7 +1,49 @@
 [gd_scene format=3 uid="uid://c0yc6b3h40n5i"]
 
 [ext_resource type="Texture2D" uid="uid://dke2rcrnf3onp" path="res://entities/processor/chip/chip.png" id="1_iuu1n"]
+[ext_resource type="Texture2D" uid="uid://br3jqk21t8p1i" path="res://entities/processor/aim/aim.png" id="2_n41fy"]
 [ext_resource type="Script" uid="uid://cb8gltqkhqyuh" path="res://entities/processor/processor.gd" id="2_qsb8t"]
+[ext_resource type="Script" uid="uid://bxsoe6enejs04" path="res://entities/processor/circuit/circuit_data.gd" id="3_al5w0"]
+[ext_resource type="PackedScene" uid="uid://bawg2ecg1dbg5" path="res://entities/processor/circuit/circuit.tscn" id="3_uy730"]
+[ext_resource type="Texture2D" uid="uid://dbpqfmmo7tsdr" path="res://entities/processor/circuit/circuit.png" id="4_xgyii"]
+[ext_resource type="PackedScene" uid="uid://cnk7uc5uoonxh" path="res://entities/processor/mark/mark.tscn" id="7_kesmw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kesmw"]
+texture = ExtResource("2_n41fy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+
+[sub_resource type="TileSet" id="TileSet_al5w0"]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "aim"
+terrain_set_0/terrain_0/color = Color(0.2760717, 0.18000793, 0.1221477, 1)
+sources/0 = SubResource("TileSetAtlasSource_kesmw")
+
+[sub_resource type="Resource" id="Resource_al5w0"]
+script = ExtResource("3_al5w0")
+metadata/_custom_type_script = "uid://bxsoe6enejs04"
+
+[sub_resource type="Resource" id="Resource_xgyii"]
+script = ExtResource("3_al5w0")
+raidus = 4
+metadata/_custom_type_script = "uid://bxsoe6enejs04"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xgyii"]
+texture = ExtResource("4_xgyii")
+texture_region_size = Vector2i(40, 40)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+
+[sub_resource type="TileSet" id="TileSet_lxk3t"]
+tile_size = Vector2i(32, 32)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Border"
+terrain_set_0/terrain_0/color = Color(0.89859456, 0.77193916, 0.6991675, 1)
+sources/2 = SubResource("TileSetAtlasSource_xgyii")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qsb8t"]
 texture = ExtResource("1_iuu1n")
@@ -404,6 +446,33 @@ terrain_set_0/terrain_3/name = "Blue"
 terrain_set_0/terrain_3/color = Color(0.5103393, 0.45834213, 0.18431404, 1)
 sources/4 = SubResource("TileSetAtlasSource_qsb8t")
 
-[node name="Processor" type="TileMapLayer" unique_id=1129030364]
-tile_set = SubResource("TileSet_u04p8")
+[node name="Processor" type="Node2D" unique_id=1259888698 node_paths=PackedStringArray("mark")]
 script = ExtResource("2_qsb8t")
+mark = NodePath("Mark")
+
+[node name="Aim" type="TileMapLayer" parent="." unique_id=1877113846]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_al5w0")
+
+[node name="Circuits" type="Node2D" parent="." unique_id=1145216207]
+
+[node name="Circuit3" parent="Circuits" unique_id=1449801198 node_paths=PackedStringArray("processor") instance=ExtResource("3_uy730")]
+default_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+data = SubResource("Resource_al5w0")
+processor = NodePath("../../Defect")
+
+[node name="Circuit4" parent="Circuits" unique_id=1880365809 node_paths=PackedStringArray("processor") instance=ExtResource("3_uy730")]
+default_color = Color(0.12225223, 0.12225225, 0.12225217, 1)
+data = SubResource("Resource_xgyii")
+processor = NodePath("../../Defect")
+
+[node name="Background" type="TileMapLayer" parent="." unique_id=1141723989]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_lxk3t")
+
+[node name="Defect" type="TileMapLayer" parent="." unique_id=1129030364]
+unique_name_in_owner = true
+tile_set = SubResource("TileSet_u04p8")
+
+[node name="Mark" parent="." unique_id=29889133 node_paths=PackedStringArray("processor") instance=ExtResource("7_kesmw")]
+processor = NodePath("..")

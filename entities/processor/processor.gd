@@ -1,5 +1,5 @@
 class_name Processor
-extends TileMapLayer
+extends Node2D
 
 
 var data: ProcessorData:
@@ -8,6 +8,11 @@ var data: ProcessorData:
 		
 		connect_signals()
 		apply_defects()
+		apply_aim()
+		mark.data = data.mark
+
+@export var mark: Mark
+
 
 
 #region init
@@ -26,7 +31,8 @@ func connect_signals() -> void:
 func _on_coords_changed(edge_: EdgeData) -> void:
 	match edge_.defect.trend:
 		Bozo.Trend.DECAY:
-			set_cells_terrain_connect(edge_.coords, 0, -1)
+			%Defect.set_cells_terrain_connect(edge_.coords, 0, -1)
+			%Background.set_cells_terrain_connect(edge_.coords, 0, -1)
 		Bozo.Trend.GROWTH:
 			var tone = edge_.defect.tone
 			update_terrain(tone)
@@ -40,7 +46,11 @@ func apply_defects() -> void:
 func update_terrain(tone_: Bozo.Tone) -> void:
 	var coords = data.tone_to_coords[tone_]
 	var terrain = Digest.tone_to_terrain[tone_]
-	set_cells_terrain_connect(coords, 0, terrain, true)
+	%Defect.set_cells_terrain_connect(coords, 0, terrain, true)
+	%Background.set_cells_terrain_connect(data.coords, 0, 0, true)
+
+func apply_aim() -> void:
+	%Aim.set_cells_terrain_connect(data.aim.coords, 0, 0, true)
 #endregion
 
 

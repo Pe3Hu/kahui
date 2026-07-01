@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cnk7uc5uoonxh"]
+
+[ext_resource type="Texture2D" uid="uid://gbbvb0ptvx30" path="res://entities/processor/mark/mark.png" id="1_7v7eh"]
+[ext_resource type="Script" uid="uid://yv5rlp7sexe4" path="res://entities/processor/mark/mark.gd" id="2_1bugw"]
+
+[node name="Mark" type="Sprite2D" unique_id=29889133]
+texture = ExtResource("1_7v7eh")
+hframes = 3
+script = ExtResource("2_1bugw")

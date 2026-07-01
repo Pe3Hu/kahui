@@ -47,8 +47,13 @@ func init_coords(indexs_: Array[int]) -> void:
 		if right_bot.x <= coord.x and right_bot.y <= coord.y:
 			right_bot = coord
 	
+	if anchors.is_empty():
+		var anchor = coords.pick_random()
+		anchors.append(anchor)
+		center = anchor
+	else:
+		center /= anchors.size()
 	
-	center /= anchors.size()
 	dimensions = right_bot - left_top + Vector2i.ONE
 	
 	processor.coords.append_array(coords)

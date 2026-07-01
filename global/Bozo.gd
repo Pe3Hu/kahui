@@ -47,6 +47,14 @@ enum Trend {
 	DECAY = 22,
 }
 
+enum Outcome {
+	NONE = 0,
+	CRITICAL_FAILURE = 23,
+	FAILURE = 24,
+	SUCCESS = 25,
+	CRITICAL_SUCCESS = 26,
+}
+
 #region string
 enum Type {
 	NONE = 0,

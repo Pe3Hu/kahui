@@ -6,13 +6,18 @@ extends Resource
 signal coords_changed(edge_: EdgeData)
 
 var world: WorldData
-var defects: Array[DefectData]
 var core: CoreData
+var aim: AimData = AimData.new(self)
+var mark: MarkData = MarkData.new(self)
+
+var defects: Array[DefectData]
 
 var coords: Array[Vector2i]
 
 var tone_to_coords: Dictionary
 var current_defect_index: int = 6
+
+var radius_to_circuit: Dictionary
 
 
 #region init
@@ -23,6 +28,7 @@ func _init(world_: WorldData) -> void:
 	init_defects()
 	init_tones()
 	test_decay()
+	mark.roll_coord()
 
 func init_defects() -> void:
 	for tone in Catalog.tones:

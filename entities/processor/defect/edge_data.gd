@@ -38,7 +38,7 @@ func init_coords() -> void:
 		pass
 #endregion
 
-#region growth
+#region trend
 func can_growth() -> bool:
 	var direction = Digest.windrose_to_direction[windrose]
 	
@@ -81,7 +81,6 @@ func growth() -> void:
 	neighbour = neighbours.back()
 	corner_coord = coords.back()
 	neighbour.coords.append(corner_coord)
-#endregion
 
 func can_decay() -> bool:
 	if is_last_edge(): return false
@@ -131,7 +130,9 @@ func decay() -> void:
 	coords.clear()
 	coords.append_array(new_coords)
 	coords.sort_custom(func (a,b): return Helper.edge_sort(windrose, a, b))
+#endregion
 
+#region flag
 func is_last_edge() -> bool:
 	var neighbour = neighbours.front()
 	return neighbour.coords.size() == 1
@@ -142,3 +143,4 @@ func is_anchor() -> bool:
 			return true
 	
 	return false
+#endregion

@@ -36,6 +36,7 @@ const tone_to_terrain = {
 }
 #endregion
 
+#region windrose
 const windrose_to_direction = {
 	Bozo.Windrose.N : Vector2i(0, -1),
 	Bozo.Windrose.E : Vector2i(1, 0),
@@ -48,4 +49,11 @@ const windrose_to_mirror = {
 	Bozo.Windrose.E : Bozo.Windrose.W,
 	Bozo.Windrose.S : Bozo.Windrose.N,
 	Bozo.Windrose.W : Bozo.Windrose.E,
+}
+#endregion
+
+const outcome_to_frame = {
+	Bozo.Outcome.FAILURE: 2,
+	Bozo.Outcome.SUCCESS: 1,
+	Bozo.Outcome.CRITICAL_SUCCESS: 0
 }
